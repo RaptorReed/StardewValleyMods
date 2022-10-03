@@ -1,0 +1,39 @@
+{
+    "Format": "1.27.0",
+    "ConfigSchema": {
+        "HideTotalEarnings": {
+            "AllowValues": "true, false",
+            "Default": true,
+            "Description": "Check box to hide total earnings, uncheck box to display total earnings. \n\nChange will only apply after new in-game day begins."
+        },
+        "HideCurrentFunds": {
+            "AllowValues": "true, false",
+            "Default": false,
+            "Description": "Check box to hide current funds, uncheck box to display current funds. Does not affect money shown in upper right of screen, only the current funds displayed on inventory tab.\n\nChange will only apply after new in-game day begins."
+        }
+    },
+    "Changes": [
+        {
+            "Action": "EditData",
+            "Target": "Strings/UI",
+            "Entries": {
+                "Inventory_TotalEarnings": "",
+                "Inventory_TotalEarnings_Separate": ""
+            },
+            "When": {
+                "HideTotalEarnings": true
+            }
+        },
+        {
+            "Action": "EditData",
+            "Target": "Strings/UI",
+            "Entries": {
+                "Inventory_CurrentFunds": "",
+                "Inventory_CurrentFunds_Separate": ""
+            },
+            "When": {
+                "HideCurrentFunds": true
+            }
+        }
+    ]
+}

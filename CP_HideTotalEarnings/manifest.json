@@ -1,0 +1,11 @@
+{
+    "Name": "Hide Total Earnings",
+    "Author": "RaptorReed",
+    "Version": "1.1.0",
+    "Description": "Hides Total Earnings from inventory tab.",
+    "UniqueID": "RaptorReed.HideTotalEarnings",
+    "UpdateKeys": [],
+    "ContentPackFor": {
+        "UniqueID": "Pathoschild.ContentPatcher"
+    }
+}
