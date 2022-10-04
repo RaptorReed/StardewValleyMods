@@ -1,0 +1,13 @@
+{
+    "Changes": [
+        {
+			"LogName": "Science House Events",
+			"Action": "EditData",
+			"Target": "Data/Events/ScienceHouse",
+			"Entries": {
+			//New Demetrius-Robin Tomato event
+            "25/f Demetrius 1500/p Demetrius/p Robin": "jaunty/-1000 -1000/farmer -10 -10 0 Demetrius 6 21 3 Robin 5 21 1/skippable/showFrame Demetrius 28/viewport 6 21 true/pause 900/speak Robin \"Demetrius, I didn't tell you to get tomatoes. I said to get fruit.\"/emote Demetrius 8/speak Demetrius \"Tomatoes are fruits!\"/emote Robin 12/speak Robin \"When someone says they want fruit, they NEVER mean tomatoes. It doesn't matter what the scientific classification is.$6\"/emote Demetrius 16/speak Demetrius \"Wait, they really NEVER mean tomatoes?$6\"/speak Demetrius \"I knew they were colloquially referred to as vegetables, but I didn't think that meant people don't consider them to be fruits at all.$s\"/speak Robin \"Well, now you know.$6\"/pause 300/faceDirection Robin 1/pause 300/speak Demetrius \"I'm sorry honey. It's hard for me to know some of these unspoken rules and assumptions until I encounter them for the first time.$s\"/speak Demetrius \"But I'll make sure to ask for clarification next time.\"/emote Robin 20/speak Robin \"Thank you, dear.\"/speak Robin \"And I'm sorry for getting angry. I shouldn't assume that you know something just because I do.$s\"/emote Demetrius 20/speak Demetrius \"How about I go pick up some colloquially accepted fruits? Are strawberries ok?$h\"/emote Robin 32/speak Robin \"Strawberries are great, thanks love!$h\"/emote Demetrius 20/warp farmer 6 24/playSound doorClose/pause 500/showFrame Demetrius 29/faceDirection Robin 2/speak Demetrius \"@, great timing!$h\"/move farmer 0 -2 0/emote farmer 8/speak Demetrius \"$q 59 null#Would you like some tomatoes?$h#$r 59 -30 Event_tomato_sure#Uh.. sure?#$r 59 50 Event_tomato_no#No, thanks\"/move Demetrius 1 0 0/move Demetrius 0 3 0/move Demetrius -1 0 0/move Demetrius 0 1 0/warp Demetrius -10 -10/playSound doorClose/faceDirection farmer 2/emote farmer 8/faceDirection Robin 2/animate Robin false true 100 32 33/pause 500/globalFade/viewport -1000 -1000/end",
+			},
+		},
+    ]
+}
