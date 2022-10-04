@@ -1,0 +1,83 @@
+{
+	"Changes": [
+		{
+			"LogName": "Maru Intro Change",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Maru",
+			"Entries": {
+				"Introduction": "Hey Ryker, nice mod!$h#$e"
+			}
+		},
+		//REGULAR DIALOGUE
+		{
+			"LogName": "DailyDialogue 0-1",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Maru",
+			"Entries": {
+				"spring_Wed": "Hey, @.#$q 3333001/3333002/3333003 q1_fallback#What about you, @? Do you like science and engineering?#$r 3333001 50 q1_r1_yay#Absolutely! I'm a proud nerd#$r 3333002 0 q1_r2_disappointed#Eh, not really my thing, but it's cool you like it!#$r 3333003 -50 q1_r3_hurt#Ew, no. Now that I'm done with school, I hope I never have to think about those again",
+				"spring_Thu": "$p 3333001#Hey there fellow nerd!$h|$p 3333002#Hey, what's up?|Oh hey... I won't bore you with any of my science stuff.$s#$e",
+			},
+			"When": {
+				"Hearts:Maru": "0, 1",
+			},
+		},
+
+		//DIALOGUE QUESTIONS
+		{
+			"LogName": "Daily Dialogue - Questions",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Maru",
+			"Entries": {
+				"q2_talk_too_much": "Can I ask you something... Do I talk too much?",
+				"q3_help_townsfolk": "What do you think @?",
+				"q4_sebastian_hopeless": "Do you think it's hopeless to fix things with Sebastian?",
+				"q5_autistic": "...",
+			},
+		},
+
+		//DIALOGUE ANSWER REACTIONS
+		{
+			"LogName": "Daily Dialogue - Reactions to Answers",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Maru",
+			"Entries": {
+				"q1_r1_yay": "Yay! Nerd friend!$h#$e",
+				"q1_r2_disappointed": "Oh, that's fair I guess.#$e",
+				"q1_r3_hurt": "Wow, ok... sorry for asking.$s#$e",
+			},
+		},
+		{
+			"LogName": "Daily Dialogue Demetrius - Reactions to Answers",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Demetrius",
+			"Entries": {
+				"Event_tomato_sure": "Great!$h#$e",
+				"Event_tomato_no": "Ok, hmmm, maybe I can run some tests on them later..$3#$e",
+			},
+		},
+
+		//DIALOGUE QUESTION FALLBACKS
+		{
+			"LogName": "Daily Dialogue - Fallback Dialogue for already answered Questions",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/Maru",
+			"Entries": {
+				"q1_fallback": "$p 3333003#...$s|Catch ya later!#$e",
+			},
+		},
+
+				//CONDITIONAL DIALOGUE
+		// {
+		// 	"LogName": "Daily Dialogue Joja 4-5",
+		// 	"Action": "EditData",
+		// 	"Target": "Characters/Dialogue/Shane",
+		// 	"Entries": {
+		// 		"3{{DialogueYear}}": "Hey, if I post a request for someone to smack Morris in his smarmy face, do you think anyone would take it?#$b#I'd do it myself, but that might get me fired.$3#$e#Heh, I'm just kidding.$6#$b#Well, mostly, anyway.$3",
+		// 	},
+		// 	"When": {
+		// 		"Hearts:Shane": "4, 5",
+		// 		"HasSeenEvent |contains=191393": false,
+		// 	},
+		// },
+	]
+}

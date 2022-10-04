@@ -1,0 +1,217 @@
+{
+	"Format": "1.27.0",
+	"ConfigSchema": {
+		"GenderNeutrality": {
+			"AllowValues": "true, false",
+			"Default": true,
+			"Description": "Toggles whether or not Maru will use gender-neutral \"they/them\" pronouns to refer to you.",
+		},
+		"EventChanges": {
+			"AllowValues": "true, false",
+			"Default": true,
+			"Description": "Edits some vanilla events and adds new events.",
+		},
+		"DailyDialogue": {
+			"AllowValues": "true, false",
+			"Default": true,
+			"Description": "Toggles whether or not Maru's everyday dialogue is replaced by the dialogue in this mod.",
+		},
+		"MarriageDialogue": {
+			"AllowValues": "true, false",
+			"Default": true,
+			"Description": "Toggles whether or not Maru's marriage dialogue is replaced by the dialogue in this mod.",
+		},
+		"AnniversarySeason": {
+			"AllowValues": "spring, summer, fall, winter",
+			"Default": "spring",
+			"Description": "Set the season of your wedding anniversary with Maru. Ignore this option if you don't plan to marry/romance her.",
+		},
+		"AnniversaryDayOfMonth": {
+			"AllowValues": "1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28",
+			"Default": "1",
+			"Description": "Set the day of your wedding anniversary with Maru. Ignore this option if you don't plan to marry/romance her.",
+		},
+	},
+	"DynamicTokens": [
+	//Dialogue
+		{
+			"Name": "DialogueYear",
+			"Value": null,
+			"When": {
+				"Year": "1",
+			},
+		},
+		{
+			"Name": "DialogueYear",
+			"Value": "_2",
+			"When": {
+				"Year |contains=1": false
+			},
+		},
+	//Possessive Adjectives
+		{
+			"Name": "PossAdj",
+			"Value": "his",
+			"When": {
+				"PlayerGender": "male",
+				"GenderNeutrality": false,
+			},
+		},
+		{
+			"Name": "PossAdj",
+			"Value": "her",
+			"When": {
+				"PlayerGender": "female",
+				"GenderNeutrality": false,
+			},
+		},
+		{
+			"Name": "PossAdj",
+			"Value": "their",
+			"When": {
+				"GenderNeutrality": true,
+			},
+		},
+	//Objective Pronouns
+		{
+			"Name": "ObjPro",
+			"Value": "him",
+			"When": {
+				"PlayerGender": "male",
+				"GenderNeutrality": false,
+			},
+		},
+		{
+			"Name": "ObjPro",
+			"Value": "her",
+			"When": {
+				"PlayerGender": "female",
+				"GenderNeutrality": false,
+			},
+		},
+		{
+			"Name": "ObjPro",
+			"Value": "them",
+			"When": {
+				"GenderNeutrality": true,
+			},
+		},
+	//Parent Title
+		{
+			"Name": "ParentTitle",
+			"Value": "Dad",
+			"When": {
+				"PlayerGender": "male",
+				"GenderNeutrality": false,
+			},
+		},
+		{
+			"Name": "ParentTitle",
+			"Value": "Mom",
+			"When": {
+				"PlayerGender": "female",
+				"GenderNeutrality": false,
+			},
+		},
+		{
+			"Name": "ParentTitle",
+			"Value": "Doc",
+			"When": {
+				"GenderNeutrality": true,
+			},
+		},
+	//Marriage Dialogue
+		{
+			"Name": "SpouseTitle",
+			"Value": "husband",
+			"When": {
+				"PlayerGender": "male",
+				"GenderNeutrality": false,
+			},
+		},
+		{
+			"Name": "SpouseTitle",
+			"Value": "wife",
+			"When": {
+				"PlayerGender": "female",
+				"GenderNeutrality": false,
+			},
+		},
+		{
+			"Name": "SpouseTitle",
+			"Value": "spouse",
+			"When": {
+				"GenderNeutrality": true,
+			},
+		},
+		// TheMightyAmondee's Custom Tokens not installed
+		{
+			"Name": "ASeason",
+			"Value": "summer",
+			"When": {
+				"AnniversarySeason": "fall",
+			},
+		},
+		{
+			"Name": "ASeason",
+			"Value": "fall",
+			"When": {
+				"AnniversarySeason": "winter",
+			},
+		},
+		{
+			"Name": "ASeason",
+			"Value": "winter",
+			"When": {
+				"AnniversarySeason": "spring",
+			},
+		},
+		{
+			"Name": "ASeason",
+			"Value": "spring",
+			"When": {
+				"AnniversarySeason": "summer",
+			},
+		},
+	],
+	"Changes": [
+	//EVENTS
+		{
+			"LogName": "Events",
+			"Action": "Include",
+			"FromFile": "Events/events.json",
+			"When": {
+				"EventChanges": true,
+			},
+		},
+	//NPC DISPOSITIONS
+		{
+			"LogName": "NPC Dispositions",
+			"Action": "EditData",
+			"Target": "Data/NPCDispositions",
+			"Entries": {
+				"Maru": "adult/neutral/outgoing/positive/female/datable/null/Town/summer 10/Robin 'mom' Demetrius 'dad' Sebastian 'brother'/ScienceHouse 2 4/Maru"
+			}
+		},
+	//DAILY DIALOGUE
+		{
+			"LogName": "Daily Dialogue Master",
+			"Action": "Include",
+			"FromFile": "Dialogue/DailyDialogue.json",
+			"When": {
+				"DailyDialogue": true
+			}
+		},
+		{
+			"LogName": "Daily Dialogue Rainy Removal",
+			"Action": "EditData",
+			"Target": "Characters/Dialogue/rainy",
+			"Entries": {
+				"Maru": null,
+			},
+			"When": {
+				"DailyDialogue": true
+			},
+		},
+	]
+}
