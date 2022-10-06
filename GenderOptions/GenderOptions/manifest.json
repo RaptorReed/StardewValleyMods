@@ -1,0 +1,16 @@
+{
+  "Name": "GenderOptions",
+  "Author": "RaptorReed",
+  "Version": "1.0.0",
+  "Description": "Collects gender config preferences from player and exposes them as tokens to other mods.",
+  "UniqueID": "RaptorReed.GenderOptions",
+  "EntryDll": "GenderOptions.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": [],
+  "Dependencies": [
+    {
+      "UniqueID": "Pathoschild.ContentPatcher",
+      "IsRequired": false
+    }
+  ]
+}
