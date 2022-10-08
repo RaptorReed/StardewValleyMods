@@ -1,0 +1,10 @@
+{
+  "Name": "MuseumTracker",
+  "Author": "RaptorReed",
+  "Version": "1.0.0",
+  "Description": "Tracks which artifacts and minerals have been donated to museum.",
+  "UniqueID": "RaptorReed.MuseumTracker",
+  "EntryDll": "MuseumTracker.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": []
+}
